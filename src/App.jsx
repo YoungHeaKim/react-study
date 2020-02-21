@@ -1,10 +1,9 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import { Main } from './main/views/index';
+import { Main } from './main/index';
 
 // component 생성 시 constructor -> componentWillMount -> render -> componentDidMount
 // component props 변경시 componentWillReceiveProps -> shouldComponentUpdate -> componentWillUpdate-> render -> componentDidUpdate
-@withRouter
 class App extends React.Component {
   // constructor -> state 초기화 및 컴포넌트 생성자
   constructor(props) {
@@ -23,5 +22,5 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;
+// create-react-app에서는 데코레이터 사용하지 못함으로 이런식으로 사용
+export default withRouter(App);

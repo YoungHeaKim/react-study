@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Axios from 'axios';
 
-@withRouter
 class Movie extends React.Component {
   constructor(props) {
     super(props);
@@ -23,15 +22,17 @@ class Movie extends React.Component {
 
   render() {
     const { movies } = this.state;
+    console.log(movies);
 
     return (
       <div>
         {
-          movies.length !== 0 ? 'Loading....' :
+          movies.length === 0 ? 'Loading....' :
             movies.map((movie, i) =>
-              <div>
-                <h1>{i}</h1>
-                <div>{movie}</div>
+              <div key={i}>
+                <h1>{i + 1}</h1>
+                <div>{movie.title}</div>
+                <img src={movie.medium_cover_image} alt="movie"/>
               </div>,
             )
         }
@@ -40,4 +41,4 @@ class Movie extends React.Component {
   }
 }
 
-export default Movie;
+export default withRouter(Movie);
