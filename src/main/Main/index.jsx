@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import { Movie } from '../index';
+import { Home } from '../index';
 
 class Main extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Main extends React.Component {
     return (
       <div className="app">
         <Switch>
-          <Route path="/movie" component={Movie}/>
+          <Route path="/" component={Home}/>
         </Switch>
       </div>
     );

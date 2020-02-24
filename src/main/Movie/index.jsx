@@ -1,41 +1,35 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Axios from 'axios';
 
 class Movie extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      movies: [],
+      id: '',
+      year: '',
+      title: '',
+      summery: '',
+      poster: '',
     };
   };
 
-  getMovies = async () => {
-    const movies = await Axios.get('https://yts.mx/api/v2/list_movies.json');
-    this.setState({ movies: movies.data.data.movies });
-  };
-
   componentDidMount() {
-    this.getMovies();
+    const { id, year, title, summery, poster } = this.props;
+    console.log(this.props);
+    this.setState({ id, year, title, summery, poster });
   }
 
   render() {
-    const { movies } = this.state;
-    console.log(movies);
+    const { id, year, title, summery, poster } = this.state;
 
     return (
       <div>
-        {
-          movies.length === 0 ? 'Loading....' :
-            movies.map((movie, i) =>
-              <div key={i}>
-                <h1>{i + 1}</h1>
-                <div>{movie.title}</div>
-                <img src={movie.medium_cover_image} alt="movie"/>
-              </div>,
-            )
-        }
+        <div>{id}</div>
+        <h1>{title}</h1>
+        <img src={poster} alt="movie"/>
+        <h2>{year}</h2>
+        <p>{summery}</p>
       </div>
     );
   }
