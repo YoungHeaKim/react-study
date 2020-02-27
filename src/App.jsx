@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { Main } from './main/index';
-
+import styles from './stylesheet.scss'
 // component 생성 시 constructor -> componentWillMount -> render -> componentDidMount
 // component props 변경시 componentWillReceiveProps -> shouldComponentUpdate -> componentWillUpdate-> render -> componentDidUpdate
 class App extends React.Component {
@@ -14,7 +14,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
+      <div className={styles.app}>
         <Switch>
           <Route path="/" component={Main}/>
         </Switch>

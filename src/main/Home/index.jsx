@@ -2,8 +2,10 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import styles from './stylesheet.scss';
-// import { Button } from '../../components/index';
 import { Movie } from '../index';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles);
 
 class Home extends React.Component {
   constructor(props) {
@@ -17,7 +19,6 @@ class Home extends React.Component {
 
   getMovies = async () => {
     const { data: { data: { movies } } } = await axios.get('https://yts.mx/api/v2/list_movies.json');
-    console.log(movies);
     this.setState({ movies, isLoading: false });
   };
 
@@ -27,13 +28,13 @@ class Home extends React.Component {
 
   render() {
     const { movies, isLoading } = this.state;
-    console.log(movies);
+    const { className } = this.props;
 
     return (
-      <div className={styles}>
+      <div className={cx('homeDiv', className)}>
         {
           isLoading ? 'Loading...' :
-            <div>
+            <div className='InnerDiv'>
               {
                 movies.length !== 0 && movies.map((movie, i) =>
                   <Movie key={i} movie={movie}/>,

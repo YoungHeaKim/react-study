@@ -1,14 +1,16 @@
 import React from 'react';
 import styles from './stylesheet.scss';
-import { classes } from '../../common/util';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles);
 
 class Button extends React.Component {
   render() {
     const { children, to, className, onClick, disabled, placeholder, svg: Svg, href, hrefSelf } = this.props;
 
     // 공통적으로 사용 되는 props들
-    const commonProps = { className: classes(styles.button, className), 'data-placeholder': placeholder };
+    const commonProps = { className: cx(styles.button, className), 'data-placeholder': placeholder };
 
     const wrappedChilder = [
       Svg && (

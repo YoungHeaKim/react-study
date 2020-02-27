@@ -9,8 +9,10 @@ class Main extends React.Component {
   }
 
   render() {
+    const { className } = this.props;
+
     return (
-      <div className="app">
+      <div className={className}>
         <Switch>
           <Route path="/" component={Home}/>
         </Switch>

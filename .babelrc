@@ -13,6 +13,14 @@
       }
     ],
     [
+      "module-resolver",
+      {
+        "alias": {
+          "~/*": "./src"
+        }
+      }
+    ],
+    [
       "transform-builtin-extend",
       {
         "globals": [
