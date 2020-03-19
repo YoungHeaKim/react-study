@@ -14,16 +14,33 @@ class Movie extends React.Component {
   };
 
   render() {
-    const { id, year, title, summary, medium_cover_image } = this.props.movie;
+    const { movieNm, rank, movieCd, openDt, audiAcc,rankInten } = this.props.movie;
     const { className } = this.props;
 
     return (
-      <Button className={cx("movieItem", className)}>
-        <div>{id}</div>
-        <h1>{title}</h1>
-        <img src={medium_cover_image} alt="movie"/>
-        <h2>{year}</h2>
-        <p>{summary}</p>
+      <Button className={cx('movieItem', className)} to={`/${movieCd}`}>
+        <div className='rankWrap'>
+          <div className='rank'>NO.{rank}</div>
+        </div>
+        <div className='movieInfo'>
+          <div className='titleOfMovie'>{movieNm}</div>
+          <table className='tableOfMovie'>
+            <tbody>
+            <tr>
+              <th>영화 개봉일:</th>
+              <td>{openDt}</td>
+            </tr>
+            <tr>
+              <th>누적관객수:</th>
+              <td>{audiAcc}명</td>
+            </tr>
+            <tr>
+              <th>순위 변:</th>
+              <td>{rankInten>0 ? rankInten : rankInten}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </Button>
     );
   }

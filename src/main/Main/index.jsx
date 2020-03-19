@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import { Home } from '../index';
+import { Home, MovieDetail } from '../index';
 
 class Main extends React.Component {
   constructor(props) {
@@ -9,14 +9,11 @@ class Main extends React.Component {
   }
 
   render() {
-    const { className } = this.props;
-
     return (
-      <div className={className}>
-        <Switch>
-          <Route path="/" component={Home}/>
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/:id" component={MovieDetail}/>
+      </Switch>
     );
   }
 }
