@@ -17,7 +17,7 @@ class TopMovie extends React.Component {
     const { movieNm, rank, openDt, audiAcc, rankInten } = movie;
 
     return (
-      <div className={cx('movieItem', className)}>
+      <div className={cx('movieRankWrap', className)}>
         {
           rank < 4 ?
             <div className='rankWrap'>

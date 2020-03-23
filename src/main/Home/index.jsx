@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import styles from './stylesheet.scss';
-import { PopularMovie, TopMovie } from 'components/index';
+import { PopularMovie, CardSlider, TopMovie } from 'components/index';
 import classNames from 'classnames/bind';
 import moment from 'moment';
 
@@ -41,15 +41,13 @@ class Home extends React.Component {
           isLoading ? 'Loading...' :
             <div className='InnerDiv'>
               <h1 className='headerTitle'>영화 Top 10</h1>
-              <ul className='listTopMovie'>
+              <CardSlider className='sliderItems' items={movies}>
                 {
-                  movies.length !== 0 && movies.map((movie, i) =>
-                    <li className='movieWrap' key={i}>
-                      <TopMovie movie={movie}/>
-                    </li>,
+                  movies.length !== 0 && movies.map((item, i) =>
+                    <TopMovie className='movieWrap' key={i} movie={item}/>,
                   )
                 }
-              </ul>
+              </CardSlider>
               <h1 className='headerPopularTitle'>최신 영화</h1>
               <ul className='listPopularMovie'>
                 {

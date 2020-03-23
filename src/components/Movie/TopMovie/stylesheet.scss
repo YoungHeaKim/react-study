@@ -1,7 +1,8 @@
-@import "../../../common/stylesheet/index";
+@import "common/stylesheet/index";
 
-.movieItem {
+.movieRankWrap {
   text-align: center;
+  padding: 0 20px;
   margin-bottom: 10px;
   width: 100%;
 
@@ -16,12 +17,14 @@
       color: white;
     }
   }
+
   .rankOverThree {
     width: 100%;
     height: 30px;
     line-height: 30px;
     background: gray;
     border: 3px solid black;
+
     .rank {
       color: white;
     }
@@ -42,6 +45,7 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+
     .tableOfMovie {
       th {
         font-weight: bold;

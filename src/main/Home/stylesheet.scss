@@ -1,66 +1,13 @@
 @import "common/stylesheet/index.scss";
 
 .homeDiv {
+  max-width: 1140px;
   width: 100%;
   height: 100%;
-  //background: rgb(43, 43, 43);
   //가운데 정렬하는 법
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-
-  .headerTitle {
-    text-align: center;
-    border-bottom: 2px solid black;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-  }
-  .headerPopularTitle {
-    text-align: center;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-    margin: 10px 0;
-    padding: 5px 0;
-  }
-
-  .listTopMovie {
-    list-style: none;
-    padding-left: 0px;
-    // 카드 정렬
-    display: flex;
-    flex: 1;
-    align-content: space-between;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-
-    .movieWrap {
-      width: 23%;
-      margin: 10px 0 10px 2.65%;
-    }
-
-    .movieWrap:first-child, .movieWrap:nth-child(5), .movieWrap:nth-child(9) {
-      margin-left: 0;
-    }
-  }
-  .listPopularMovie{
-    list-style: none;
-    padding-left: 0px;
-    // 카드 정렬
-    display: flex;
-    flex: 1;
-    align-content: space-between;
-    flex-wrap: wrap;
-
-    .moviePopularWrap {
-      width: 48%;
-      margin: 10px 1%;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .movieWrap:first-child, .movieWrap:nth-child(3), .movieWrap:nth-child(5) {
-      margin-left: 0;
-    }
-  }
 
   .InnerDiv {
     width: 90%;
@@ -68,6 +15,48 @@
     max-height: 100%;
     align-items: center;
     background: rgb(252, 252, 240);
+
+
+    .headerTitle {
+      text-align: center;
+      border-bottom: 2px solid black;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+    }
+
+    .headerPopularTitle {
+      text-align: center;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+      padding: 5px 0;
+    }
+
+    .sliderItems {
+      width: 90%;
+      height: 180px;
+      margin: 0 auto;
+    }
+
+    .listPopularMovie {
+      list-style: none;
+      padding-left: 0px;
+      // 카드 정렬
+      display: flex;
+      flex: 1;
+      align-content: space-between;
+      flex-wrap: wrap;
+
+      .moviePopularWrap {
+        width: 48%;
+        margin: 10px 1%;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .movieWrap:first-child, .movieWrap:nth-child(3), .movieWrap:nth-child(5) {
+        margin-left: 0;
+      }
+    }
   }
 }
 

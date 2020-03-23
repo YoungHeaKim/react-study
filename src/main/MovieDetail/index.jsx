@@ -24,7 +24,6 @@ class MovieDetail extends React.Component {
 
   getMovieDetail = async (id) => {
     const { data: { movieInfoResult: { movieInfo: movie } } } = await axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=430156241533f1d058c603178cc3ca0e&movieCd=${id}`);
-    console.log(movie);
     this.setState({
       title: movie.movieNm,
       englishTitle: movie.movieNmEn,
