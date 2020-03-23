@@ -1,0 +1,58 @@
+@import "common/stylesheet/index";
+
+.popularMovieItem {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 300px;
+
+  .movieInfo {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+
+    .posterWrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45%;
+      height: 300px;
+
+      .posterImage {
+        width: 95%;
+        height: 95%;
+      }
+    }
+
+    .movieWrap{
+      display: inline;
+      width: 55%;
+
+      .titleOfMovieWrap {
+        width: 100%;
+        margin-right: 10px;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        line-height: 30px;
+      }
+
+      .title {
+        width: 30%;
+        font-weight: bold;
+      }
+      .detail {
+        width: 70%;
+      }
+    }
+
+
+    //td {
+    //  width: 50%;
+    //  word-wrap: break-word;
+    //  line-height: 1.2em;
+    //  font-size: 0.9em;
+    //}
+  }
+}
+
