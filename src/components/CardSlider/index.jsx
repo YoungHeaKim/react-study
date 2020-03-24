@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+// 함수형 component
 export default (props) => {
   const { className, children } = props;
 
@@ -19,6 +20,7 @@ export default (props) => {
 
   return (
     <Slider className={className} {...settings}>
+      {/*상위에 있는 props를 하위 component로 보내서 뿌려주는 방식*/}
       {children}
     </Slider>
   );

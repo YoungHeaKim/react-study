@@ -24,7 +24,7 @@ class PopularMovie extends React.Component {
         </div>
         <div className='movieCardWrap'>
           <Button className='titleOfMovieWrap' to={`/${id}`}>
-            <p className='titleOfMovie'>{title}</p>
+            {title}
           </Button>
           <div className='movieInfoWrap'>
             <div className='titleOfOpen'>영화 개봉일:</div>

@@ -13,24 +13,13 @@ class MovieDetail extends React.Component {
 
     this.state = {
       title: '',
-      content: '',
-      englishTitle: '',
-      openDt: '',
-      genres: [],
-      actors: [],
-      image: null,
+
     };
   };
 
   getMovieDetail = async (id) => {
-    const { data: { movieInfoResult: { movieInfo: movie } } } = await axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=430156241533f1d058c603178cc3ca0e&movieCd=${id}`);
-    this.setState({
-      title: movie.movieNm,
-      englishTitle: movie.movieNmEn,
-      openDt: movie.openDt,
-      genres: movie.genres,
-      actors: movie.actors,
-    });
+    const { data: movie } = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=7fdc60f28edc0c187e8450056c7731de&language=ko-KR`);
+    console.log(movie);
   };
 
   componentDidMount() {
@@ -45,10 +34,7 @@ class MovieDetail extends React.Component {
 
     return id && (
       <div className={cx('movieDetailItem', className)}>
-        {/*<Button to='/'>뒤로</Button>*/}
-        {/*<h1>{title}</h1>*/}
-        {/*<p>{content}</p>*/}
-        {/*{image !== null && <img src={image} alt="movie"/>}*/}
+
       </div>
     );
   }
