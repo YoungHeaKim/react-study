@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import './stylesheet.scss';
 import axios from 'axios';
 import { CardItem } from 'components/index';
+import moment from 'moment';
 
 class MovieDetail extends React.Component {
   constructor(props) {
@@ -57,11 +58,11 @@ class MovieDetail extends React.Component {
                   )
                 }
               </div>
-              {
-                movie.runtime / 60 > 1 ?
-                  <span className='detailRunTime'> 1h{movie.runtime - 60}m</span> :
-                  <span className='detailRunTime'>{movie.runtime}m</span>
-              }
+              <span>
+                {
+                  moment.utc(moment.duration(movie.runtime, 'minutes').asMilliseconds()).format('H시간 mm분')
+                }
+              </span>
             </div>
             <div className='detailContentWrap'>
               <h3 className='detailTagline'>{movie.tagline}</h3>

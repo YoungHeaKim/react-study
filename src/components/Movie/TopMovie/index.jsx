@@ -18,16 +18,9 @@ class TopMovie extends React.Component {
 
     return (
       <div className={cx('movieRankWrap', className)}>
-        {
-          rank < 4 ?
-            <div className='rankWrap'>
-              <div className='rank'>NO.{rank}</div>
-            </div>
-            :
-            <div className='rankOverThree'>
-              <div className='rank'>NO.{rank}</div>
-            </div>
-        }
+        <div className={rank < 4 ? 'rankWrap' : 'rankOverThree'}>
+          <div className='rank'>NO.{rank}</div>
+        </div>
         <div className='movieInfo'>
           <div className='titleOfMovie'>{movieNm}</div>
           <table className='tableOfMovie'>
@@ -40,17 +33,14 @@ class TopMovie extends React.Component {
               <th>누적관객수:</th>
               <td>{audiAcc}명</td>
             </tr>
-            {
-              rankInten === '0' ?
-                <tr>
-                  <th>순위 변:</th>
-                  <td>---</td>
-                </tr> :
-                <tr>
-                  <th>순위 변:</th>
+            <tr>
+              <th>순위 변:</th>
+              {
+                rankInten === '0' ?
+                  <td>---</td> :
                   <td>{rankInten}</td>
-                </tr>
-            }
+              }
+            </tr>
             </tbody>
           </table>
         </div>

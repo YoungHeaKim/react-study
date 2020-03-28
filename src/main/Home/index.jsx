@@ -72,19 +72,13 @@ class Home extends React.Component {
                   )
                 }
               </ul>
-              {/*TODO: 스타일 바꾸기*/}
               <ul className='pageListWrap'>
                 {
                   pages.map((pageNum, i) =>
-                    page === i + 1 ?
-                      <li className='pageListChoose' key={i}
-                          onClick={() => this.changePage(i + 1)}>
-                        {pageNum}
-                      </li> :
-                      <li className='pageList' key={i}
-                          onClick={() => this.changePage(i + 1)}>
-                        {pageNum}
-                      </li>,
+                    <li className={page === i + 1 ? 'pageListChoose' : 'pageList'} key={i}
+                        onClick={() => this.changePage(i + 1)}>
+                      {pageNum}
+                    </li>,
                   )
                 }
               </ul>
