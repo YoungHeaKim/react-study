@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a32deccd.chunk.css",
+    "main.js": "/static/js/main.df0b1439.chunk.js",
+    "main.js.map": "/static/js/main.df0b1439.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2fb95fcb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2fb95fcb.js.map",
+    "static/css/2.cdaf15d1.chunk.css": "/static/css/2.cdaf15d1.chunk.css",
+    "static/js/2.6ab6480c.chunk.js": "/static/js/2.6ab6480c.chunk.js",
+    "static/js/2.6ab6480c.chunk.js.map": "/static/js/2.6ab6480c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.8d77f338cbcc8b4fb702f31e2fdbd2e2.js": "/precache-manifest.8d77f338cbcc8b4fb702f31e2fdbd2e2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.cdaf15d1.chunk.css.map": "/static/css/2.cdaf15d1.chunk.css.map",
+    "static/css/main.a32deccd.chunk.css.map": "/static/css/main.a32deccd.chunk.css.map",
+    "static/js/2.6ab6480c.chunk.js.LICENSE": "/static/js/2.6ab6480c.chunk.js.LICENSE",
+    "static/media/dragon-solid.svg": "/static/media/dragon-solid.fa4c1d1c.svg",
+    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2fb95fcb.js",
+    "static/css/2.cdaf15d1.chunk.css",
+    "static/js/2.6ab6480c.chunk.js",
+    "static/css/main.a32deccd.chunk.css",
+    "static/js/main.df0b1439.chunk.js"
+  ]
+}
