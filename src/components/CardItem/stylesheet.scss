@@ -1,0 +1,48 @@
+@import "common/stylesheet/index";
+
+.cardItemWrap {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+
+  .imageWrap {
+    width: 100%;
+    height: 180px;
+
+    .castImage {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .cardDetailWrap {
+    width: 100%;
+
+    .actorName {
+      font-size: 1em;
+      display: inline;
+      font-style: "궁서";
+    }
+
+    .charName {
+      font-size: 1em;
+      display: inline;
+      font-style: "궁서";
+
+    }
+
+    .cardName {
+      display: block;
+      font-weight: bold;
+      margin: 5px 0;
+      font-style: italic;
+    }
+
+    .cardChracter {
+      display: block;
+      margin: 5px 0;
+      font-style: italic;
+    }
+  }
+}
+

@@ -25,17 +25,29 @@ class Home extends React.Component {
     const { page } = this.state;
     let today = moment().subtract(1, 'days').format('YYYYMMDD');
     const { data: { boxOfficeResult: { dailyBoxOfficeList: movies } } } = await axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=${today}`);
+    this.setState({ movies, isLoading: false });
+  };
+
+  getPopularMovies = async (page) => {
     const { data: { results: popularMovies } } = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=7fdc60f28edc0c187e8450056c7731de&language=ko-KR&page=${page}`);
-    this.setState({ movies, popularMovies, isLoading: false });
+    this.setState({ popularMovies });
   };
 
   componentDidMount() {
-    const { movies } = this.state;
-    if (movies.length === 0) this.getMovies();
+    const { movies, page } = this.state;
+    if (movies.length === 0) {
+      this.getPopularMovies(page);
+      this.getMovies();
+    }
+  }
+
+  changePage(page) {
+    this.getPopularMovies(page);
+    this.setState({ page });
   }
 
   render() {
-    const { movies, isLoading, popularMovies, pages } = this.state;
+    const { movies, isLoading, popularMovies, pages, page } = this.state;
     const { className } = this.props;
 
     return (
@@ -61,10 +73,19 @@ class Home extends React.Component {
                   )
                 }
               </ul>
-              <ul>
+              {/*TODO: 스타일 바꾸기*/}
+              <ul className='pageListWrap'>
                 {
-                  pages.map((page, i) =>
-                    <li key={i}>{page}</li>,
+                  pages.map((pageNum, i) =>
+                    page === i + 1 ?
+                      <li className='pageListChoose' key={i}
+                          onClick={() => this.changePage(i + 1)}>
+                        {pageNum}
+                      </li> :
+                      <li className='pageList' key={i}
+                          onClick={() => this.changePage(i + 1)}>
+                        {pageNum}
+                      </li>,
                   )
                 }
               </ul>

@@ -1,8 +1,148 @@
 @import "common/stylesheet/index.scss";
 
 .movieDetailItem {
+  max-width: 1140px;
   width: 100%;
-  height: 100%;
-  background: white;
+  height: 100vh;
+  max-height: 100%;
+  //가운데 정렬하는 법
+  margin: 0 auto;
+
+  .homeButton {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  .movieBannerContainer {
+    width: 100%;
+    height: 410px;
+    background-image: linear-gradient(to right, rgba(20.78%, 24.31%, 30.98%, 1.00) 150px, rgba(29.80%, 31.76%, 36.08%, 0.84) 100%);
+    padding: 30px 40px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+
+    .imageContainer {
+      width: 200px;
+      height: 350px;
+
+      .mainImg {
+        display: block;
+        width: 200px;
+        height: 350px;
+        border-width: 0px;
+        outline: none;
+        border-radius: 4px;
+      }
+    }
+
+    .detailInfoWrap {
+      width: 1020px;
+      min-height: 350px;
+      //background: red;
+      margin-left: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      align-content: center;
+      color: white;
+
+      .detailTitle {
+        width: 100%;
+        margin-bottom: 24px;
+        font-size: 2.2rem;
+
+        .detailOpenYear {
+          margin-left: 20px;
+          opacity: 0.8;
+          font-weight: 400;
+        }
+      }
+
+      .detailInfo {
+        display: flex;
+        width: 100%;
+        margin-bottom: 24px;
+
+        .detailStatus {
+          border: 1px solid rgba(100.00%, 100.00%, 100.00%, 0.60);
+          color: rgba(100.00%, 100.00%, 100.00%, 0.60);
+          font-size: 1.1em;
+          line-height: 1;
+          margin-right: 10px;
+        }
+
+        .detailRelease {
+          font-size: 1.1em;
+          line-height: 1;
+          padding-right: 0;
+          margin-right: 10px;
+        }
+
+        .detailGenres {
+          display: flex;
+          align-content: center;
+          align-items: center;
+          margin-right: 10px;
+
+          .detailGenreList {
+            font-size: 1.1em;
+            line-height: 1;
+          }
+        }
+
+        .detailRunTime {
+          font-size: 1.1em;
+          line-height: 1;
+        }
+      }
+
+      .detailContentWrap {
+        width: 100%;
+
+        .detailTagline {
+          margin-bottom: 0;
+          font-size: 1.1em;
+          font-weight: 400;
+          font-style: italic;
+          opacity: 0.7;
+        }
+
+        .detailContentTitle {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .movieDetailWrap {
+    max-width: 1060px;
+    width: 100%;
+    height: 100%;
+    padding: 30px 40px;
+
+    .movieDetailCastWrap {
+      width: 100%;
+      height: 640px;
+      display: flex;
+      align-content: space-between;
+      flex-wrap: wrap;
+      overflow-x: hidden;
+      overflow-y: scroll;
+
+
+      .movieCast {
+        width: 130px;
+        min-width: 130px;
+        height: 300px;
+        margin: 0 10px 20px;
+        border: 1px solid rgba(lightGrey, 1);
+        padding-bottom: 10px;
+      }
+    }
+  }
 }
 
