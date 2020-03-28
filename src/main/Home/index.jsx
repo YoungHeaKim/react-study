@@ -22,7 +22,6 @@ class Home extends React.Component {
   };
 
   getMovies = async () => {
-    const { page } = this.state;
     let today = moment().subtract(1, 'days').format('YYYYMMDD');
     const { data: { boxOfficeResult: { dailyBoxOfficeList: movies } } } = await axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=${today}`);
     this.setState({ movies, isLoading: false });

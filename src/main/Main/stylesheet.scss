@@ -1,0 +1,14 @@
+@import "common/stylesheet/index.scss";
+
+.pageWrap {
+  max-width: 1140px;
+  width: 100%;
+  height: 100%;
+  //가운데 정렬하는 법
+  margin: 0 auto;
+
+  .headerWrap {
+    width: 100%;
+  }
+}
+

@@ -3,10 +3,6 @@ import { withRouter } from 'react-router-dom';
 import './stylesheet.scss';
 import axios from 'axios';
 import { CardItem } from 'components/index';
-import home from 'Svg/home-solid.svg';
-import { Button } from 'components/index';
-
-// import { Button } from 'components';
 
 class MovieDetail extends React.Component {
   constructor(props) {
@@ -36,11 +32,6 @@ class MovieDetail extends React.Component {
 
     return id && movie && (
       <div className='movieDetailItem'>
-        <div className='homeButtonWrap'>
-          <Button to={'/'} className='homeButton'>
-            <img src={home}/>
-          </Button>
-        </div>
         <div className='movieBannerContainer'>
           <div className='imageContainer'>
             <img className='mainImg' src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${movie.poster_path}`}
