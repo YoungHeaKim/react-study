@@ -14,7 +14,7 @@ class Header extends React.Component {
 
     return (
       <Button to={'/'} className={cx('logoButton', className)}>
-        <img className='logoImg' src={dragon} alt='logo Image'/>
+        <img className='logoImg' src={dragon} alt='logo'/>
         <h1>영화소개 페이지</h1>
       </Button>
     );
