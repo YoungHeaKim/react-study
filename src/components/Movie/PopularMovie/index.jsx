@@ -3,13 +3,13 @@ import { withRouter } from 'react-router-dom';
 import { Button } from 'components/index';
 import styles from './stylesheet.scss';
 import classNames from 'classnames/bind';
+import { endpoint } from 'common/env';
 
 const cx = classNames.bind(styles);
 
 class PopularMovie extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {};
   };
 
@@ -23,7 +23,7 @@ class PopularMovie extends React.Component {
           <img className='posterImage' src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${poster_path}`} alt='posterImage'/>
         </div>
         <div className='movieCardWrap'>
-          <Button className='titleOfMovieWrap' to={`/${id}`}>
+          <Button className='titleOfMovieWrap' to={`${endpoint}/${id}`}>
             {title}
           </Button>
           <div className='movieInfoWrap'>
