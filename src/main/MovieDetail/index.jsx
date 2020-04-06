@@ -8,7 +8,6 @@ import moment from 'moment';
 class MovieDetail extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       movie: null,
       casts: [],
