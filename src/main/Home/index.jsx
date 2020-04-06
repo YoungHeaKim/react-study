@@ -23,7 +23,7 @@ class Home extends React.Component {
 
   getMovies = async () => {
     let today = moment().subtract(1, 'days').format('YYYYMMDD');
-    const { data: { boxOfficeResult: { dailyBoxOfficeList: movies } } } = await axios.get(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=${today}`);
+    const { data: { boxOfficeResult: { dailyBoxOfficeList: movies } } } = await axios.get(`https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=${today}`);
     this.setState({ movies, isLoading: false });
   };
 
@@ -48,7 +48,6 @@ class Home extends React.Component {
   render() {
     const { movies, isLoading, popularMovies, pages, page } = this.state;
     const { className } = this.props;
-
     return (
       <div className={cx('homeDiv', className)}>
         {
